@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Burger King of Mattoon, Illinois — a local independent restaurant serving burgers, fries, shakes and hometown history since 1952." />
+
+  <title>Burger King | Mattoon, Illinois</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&family=Rye&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f7efd9;
+      --paper: #fffaf0;
+      --red: #b92f2f;
+      --red-dark: #7f1f1f;
+      --aqua: #75c6c2;
+      --aqua-dark: #2f7775;
+      --ink: #191919;
+      --muted: #665f55;
+      --white: #ffffff;
+      --shadow: 0 14px 34px rgba(46, 34, 22, 0.16);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(117,198,194,.13), transparent 28%),
+        radial-gradient(circle at 85% 70%, rgba(185,47,47,.08), transparent 30%),
+        var(--cream);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .top-strip {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      font-size: .9rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      padding: .55rem 1rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,250,240,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 4px solid var(--aqua);
+    }
+
+    .nav-wrap {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+    }
+
+    .brand {
+      text-decoration: none;
+      display: inline-flex;
+      flex-direction: column;
+      line-height: .86;
+      min-width: 180px;
+    }
+
+    .brand strong {
+      font-family: "Rye", serif;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      letter-spacing: .03em;
+    }
+
+    .brand span {
+      font-family: "Pacifico", cursive;
+      color: var(--red);
+      font-size: .95rem;
+      margin-top: .34rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 800;
+      font-size: .96rem;
+    }
+
+    nav a:hover {
+      color: var(--red);
+    }
+
+    .call-btn,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .call-btn {
+      background: var(--red);
+      color: var(--white);
+      padding: .72rem 1rem;
+    }
+
+    .call-btn:hover,
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(0,0,0,.14);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 690px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(16,16,16,.78) 0%,
+          rgba(16,16,16,.55) 47%,
+          rgba(16,16,16,.18) 100%
+        ),
+        url("images/bk6-king-burger.jpg") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 20px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--red) 0 20px,
+        var(--paper) 20px 40px
+      );
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(92%, var(--max));
+      padding: 5.5rem 0 6rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--ink);
+      background: var(--aqua);
+      border: 3px solid var(--white);
+      box-shadow: 5px 5px 0 var(--red);
+      padding: .42rem .85rem;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      transform: rotate(-1deg);
+      margin-bottom: 1.3rem;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 0;
+      font-family: "Rye", serif;
+      font-size: clamp(3.4rem, 8vw, 7.3rem);
+      line-height: .94;
+      text-shadow: 0 5px 0 rgba(0,0,0,.22);
+    }
+
+    .hero h1 span {
+      display: block;
+      font-family: "Pacifico", cursive;
+      font-size: .42em;
+      color: #ffe7a4;
+      margin-top: .5rem;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 700;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+
+    .btn {
+      padding: .95rem 1.25rem;
+      border: 3px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--paper);
+      color: var(--ink);
+      border-color: var(--aqua);
+    }
+
+    section {
+      padding: 5.5rem 0;
+    }
+
+    .section-kicker {
+      color: var(--red);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .84rem;
+      margin-bottom: .4rem;
+    }
+
+    .section-title {
+      margin: 0 0 1rem;
+      font-family: "Rye", serif;
+      font-size: clamp(2.25rem, 4.5vw, 4rem);
+      line-height: 1.08;
+    }
+
+    .script {
+      font-family: "Pacifico", cursive;
+      color: var(--red);
+    }
+
+    .intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    /* STORY */
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .story-card {
+      position: relative;
+      background: var(--paper);
+      border: 4px solid var(--ink);
+      padding: clamp(1.6rem, 3vw, 2.4rem);
+      box-shadow: 10px 10px 0 var(--aqua);
+    }
+
+    .story-card::before {
+      content: "MATTOON ORIGINAL";
+      position: absolute;
+      top: -18px;
+      right: 18px;
+      background: var(--red);
+      color: white;
+      padding: .4rem .7rem;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      transform: rotate(2deg);
+    }
+
+    .story-card p {
+      margin: 0 0 1rem;
+    }
+
+    .story-photo {
+      position: relative;
+    }
+
+    .story-photo img {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .story-photo::after {
+      content: "Serving Mattoon since 1952";
+      position: absolute;
+      left: -20px;
+      bottom: 24px;
+      background: var(--red);
+      color: white;
+      font-family: "Pacifico", cursive;
+      font-size: 1.1rem;
+      padding: .7rem 1rem;
+      transform: rotate(-3deg);
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .timeline {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      background: var(--white);
+      border: 2px solid #dfd3bb;
+      border-top: 6px solid var(--red);
+      border-radius: 12px;
+      padding: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,.07);
+    }
+
+    .timeline-item strong {
+      display: block;
+      font-family: "Rye", serif;
+      color: var(--aqua-dark);
+      font-size: 1.55rem;
+      margin-bottom: .35rem;
+    }
+
+    /* FAVORITES */
+
+    .feature-band {
+      background: var(--aqua);
+      border-top: 8px solid var(--ink);
+      border-bottom: 8px solid var(--ink);
+    }
+
+    .food-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .food-card {
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      box-shadow: 7px 7px 0 rgba(127,31,31,.95);
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .food-card div {
+      padding: 1rem 1.1rem 1.2rem;
+    }
+
+    .food-card h3 {
+      font-family: "Rye", serif;
+      margin: 0 0 .35rem;
+      font-size: 1.35rem;
+    }
+
+    .food-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* MENU */
+
+    .menu-section {
+      background: #fffdf8;
+    }
+
+    .menu-note {
+      background: #fff1c8;
+      border-left: 6px solid var(--red);
+      padding: .9rem 1rem;
+      margin: 1.2rem 0 2rem;
+      font-weight: 700;
+    }
+
+    .menu-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-btn {
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: white;
+      color: var(--ink);
+      padding: .72rem 1rem;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: var(--red);
+      color: white;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .menu-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .menu-card {
+      background: var(--paper);
+      border: 2px solid #d8cdb9;
+      border-radius: 14px;
+      padding: 1.2rem;
+    }
+
+    .menu-card h3 {
+      margin: 0 0 .8rem;
+      font-family: "Pacifico", cursive;
+      color: var(--red);
+      font-size: 1.7rem;
+      border-bottom: 2px dashed #cdbfa5;
+      padding-bottom: .55rem;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding: .38rem 0;
+      border-bottom: 1px dotted #d7cdbb;
+    }
+
+    .menu-item:last-child {
+      border-bottom: 0;
+    }
+
+    .menu-item span:first-child {
+      font-weight: 700;
+    }
+
+    .menu-price {
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .menu-sub {
+      display: block;
+      font-size: .84rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .combo-box {
+      background: #fff;
+      border: 4px double var(--red);
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+
+    .combo-box h3 {
+      font-family: "Pacifico", cursive;
+      color: var(--red);
+      margin: 0 0 .4rem;
+      font-size: 1.7rem;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 210px;
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 4px solid var(--paper);
+      box-shadow: 0 7px 18px rgba(0,0,0,.14);
+    }
+
+    .gallery-grid img:nth-child(1) {
+      grid-column: span 5;
+      grid-row: span 2;
+    }
+
+    .gallery-grid img:nth-child(2) {
+      grid-column: span 7;
+    }
+
+    .gallery-grid img:nth-child(3) {
+      grid-column: span 4;
+    }
+
+    .gallery-grid img:nth-child(4) {
+      grid-column: span 3;
+    }
+
+    .gallery-grid img:nth-child(5) {
+      grid-column: span 5;
+    }
+
+    .gallery-grid img:nth-child(6) {
+      grid-column: span 4;
+    }
+
+    /* VISIT */
+
+    .visit {
+      background: var(--red);
+      color: white;
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .visit-card {
+      background: var(--paper);
+      color: var(--ink);
+      border: 5px solid var(--ink);
+      padding: 2rem;
+      box-shadow: 10px 10px 0 var(--aqua);
+    }
+
+    .visit-card h3 {
+      margin: 0 0 .8rem;
+      font-family: "Rye", serif;
+      font-size: 1.8rem;
+    }
+
+    .visit-card p {
+      margin: .4rem 0;
+    }
+
+    .visit-card .btn {
+      margin-top: .8rem;
+    }
+
+    footer {
+      background: #171717;
+      color: #eee8dc;
+      padding: 2.4rem 0;
+      text-align: center;
+    }
+
+    footer .footer-brand {
+      font-family: "Rye", serif;
+      font-size: 1.35rem;
+    }
+
+    footer p {
+      max-width: 800px;
+      margin: .6rem auto 0;
+      color: #c9c0b4;
+      font-size: .88rem;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 500;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--aqua);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      text-decoration: none;
+      font-weight: 900;
+      box-shadow: 3px 3px 0 var(--red);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 78px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem 4%;
+        background: var(--paper);
+        border-bottom: 4px solid var(--aqua);
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .story-grid,
+      .visit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .food-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      section {
+        padding: 4rem 0;
+      }
+
+      .hero {
+        min-height: 610px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 17vw, 5.2rem);
+      }
+
+      .food-grid,
+      .menu-columns,
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 180px;
+      }
+
+      .gallery-grid img,
+      .gallery-grid img:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .gallery-grid img:first-child {
+        grid-column: span 2;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <div class="top-strip">
+    PROUDLY INDEPENDENT • A MATTOON ORIGINAL • CALL AHEAD: 217-234-8122
+  </div>
+
+  <header>
+    <div class="container nav-wrap">
+
+      <a class="brand" href="#top">
+        <strong>BURGER KING</strong>
+        <span>Mattoon, Illinois</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Open navigation">☰</button>
+
+      <nav id="nav">
+        <a href="#story">Our Story</a>
+        <a href="#favorites">Favorites</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit</a>
+        <a class="call-btn" href="tel:+12172348122">☎ Call Ahead</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="hero-inner">
+
+        <div class="eyebrow">
+          A Mattoon Original Since 1952
+        </div>
+
+        <h1>
+          BURGER<br>KING
+          <span>Burgers, fries, shakes &amp; hometown history.</span>
+        </h1>
+
+        <p>
+          The independent Burger King of Mattoon, Illinois —
+          serving generations of local families with classic
+          favorites and a story unlike any other.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#menu">View the Menu</a>
+          <a class="btn btn-secondary" href="#story">Read Our Story</a>
+          <a class="btn btn-secondary" href="tel:+12172348122">
+            Call 217-234-8122
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- STORY -->
+
+    <section id="story">
+      <div class="container">
+
+        <div class="story-grid">
+
+          <div class="story-card">
+
+            <div class="section-kicker">
+              More than a meal
+            </div>
+
+            <h2 class="section-title">
+              The Burger King
+              <span class="script">before Burger King</span>
+            </h2>
+
+            <p>
+              The story begins in 1952, when Mattoon residents
+              Gene and Betty Hoots purchased the Frigid Queen
+              ice cream shop.
+            </p>
+
+            <p>
+              Burgers, fries and other hot foods were added soon
+              after, and the couple eventually gave the burger
+              business a name of its own.
+            </p>
+
+            <p>
+              Gene had another name in mind, but Betty had the
+              better idea: if there was a queen, there ought to
+              be a king. <strong>Burger King</strong> was born.
+            </p>
+
+            <p>
+              The Hootses registered the Burger King name as an
+              Illinois trademark in 1959. When the much larger
+              Florida-based Burger King chain later expanded into
+              Illinois, the dispute eventually reached federal court.
+            </p>
+
+            <p>
+              The 1968 decision protected the Mattoon restaurant's
+              prior use of the name within roughly a
+              <strong>20-mile radius of Mattoon</strong>.
+            </p>
+
+            <p>
+              The case became a notable piece of U.S. trademark
+              history — and helped make this hometown restaurant
+              one of Mattoon's most unusual landmarks.
+            </p>
+
+          </div>
+
+          <div class="story-photo">
+            <img
+              src="images/bk7-family-pack.jpg"
+              alt="Burger King Mattoon burgers, fries and drinks"
+            >
+          </div>
+
+        </div>
+
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <strong>1952</strong>
+            Gene and Betty Hoots purchase the Frigid Queen ice cream shop.
+          </div>
+
+          <div class="timeline-item">
+            <strong>1954</strong>
+            Hamburgers, French fries and other foods are added to the business.
+          </div>
+
+          <div class="timeline-item">
+            <strong>1959</strong>
+            The Hootses register the Burger King name as an Illinois trademark.
+          </div>
+
+          <div class="timeline-item">
+            <strong>1968</strong>
+            A federal court decision protects the Mattoon restaurant's local right to the name.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FAVORITES -->
+
+    <section id="favorites" class="feature-band">
+
+      <div class="container">
+
+        <div class="section-kicker">
+          Made for a drive-in kind of day
+        </div>
+
+        <h2 class="section-title">
+          Mattoon <span class="script">favorites</span>
+        </h2>
+
+        <p class="intro">
+          Classic burgers, crispy sides, soft-serve treats and
+          shakes — the kind of food that has kept families
+          coming back for generations.
+        </p>
+
+        <div class="food-grid">
+
+          <article class="food-card">
+            <img
+              src="images/bk6-king-burger.jpg"
+              alt="Burger King Mattoon burger with fries"
+            >
+            <div>
+              <h3>King Burger</h3>
+              <p>
+                A big local favorite with the classic burger-shop
+                flavors people come for.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <img
+              src="images/bk5-burger-rings.jpg"
+              alt="Burger with onion rings"
+            >
+            <div>
+              <h3>Burgers &amp; Rings</h3>
+              <p>
+                Fresh-off-the-grill comfort food with crispy,
+                golden sides.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <img
+              src="images/bk3-sundae.jpg"
+              alt="Strawberry ice cream sundae"
+            >
+            <div>
+              <h3>Ice Cream Treats</h3>
+              <p>
+                Cones, sundaes, shakes, glaciers, floats and more.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- MENU -->
+
+    <section id="menu" class="menu-section">
+
+      <div class="container">
+
+        <div class="section-kicker">
+          What sounds good?
+        </div>
+
+        <h2 class="section-title">
+          The <span class="script">Menu</span>
+        </h2>
+
+        <p class="intro">
+          Burgers, sandwiches, sides, drinks and a full lineup
+          of frozen treats.
+        </p>
+
+        <div class="menu-note">
+          Prices shown are from the current menu provided and
+          may change. Call ahead at
+          <a href="tel:+12172348122">217-234-8122</a>
+          with questions or to place an order.
+        </div>
+
+
+        <div class="menu-tabs">
+
+          <button class="tab-btn active" data-tab="food">
+            Burgers &amp; Food
+          </button>
+
+          <button class="tab-btn" data-tab="sides">
+            Sides &amp; Drinks
+          </button>
+
+          <button class="tab-btn" data-tab="icecream">
+            Ice Cream
+          </button>
+
+          <button class="tab-btn" data-tab="treats">
+            Shakes &amp; Treats
+          </button>
+
+        </div>
+
+
+        <!-- BURGERS -->
+
+        <div id="food" class="tab-panel active">
+
+          <div class="combo-box">
+
+            <h3>Make Any Item a Combo</h3>
+
+            <strong>Regular + $2.69</strong>
+            — 16 oz. drink &amp; regular fry
+            <br>
+
+            <strong>Large + $3.69</strong>
+            — 32 oz. drink &amp; large fry
+            <br>
+
+            <strong>Make it Moo! + $1.59</strong>
+            — substitute a milkshake for the drink
+
+          </div>
+
+
+          <div class="menu-columns">
+
+            <div class="menu-card">
+
+              <h3>Burgers &amp; Sandwiches</h3>
+
+              <div class="menu-item">
+                <span>Junior Burger</span>
+                <span class="menu-price">$2.71</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Jr. Cheeseburger</span>
+                <span class="menu-price">$2.89</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Hamburger</span>
+                <span class="menu-price">$3.64</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Cheeseburger</span>
+                <span class="menu-price">$3.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Double Burger</span>
+                <span class="menu-price">$4.64</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Double Cheeseburger</span>
+                <span class="menu-price">$4.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>King Burger</span>
+                <span class="menu-price">$4.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Triple Burger</span>
+                <span class="menu-price">$7.29</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Triple Cheeseburger</span>
+                <span class="menu-price">$7.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Hooter</span>
+                <span class="menu-price">$5.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Double Hooter</span>
+                <span class="menu-price">$9.39</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Triple Hooter</span>
+                <span class="menu-price">$10.89</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Pork Tenderloin</span>
+                <span class="menu-price">$4.79</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Fish Sandwich</span>
+                <span class="menu-price">$6.49</span>
+              </div>
+
+              <div class="menu-item">
+                <span>BLT</span>
+                <span class="menu-price">$4.69</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Grilled Cheese</span>
+                <span class="menu-price">$3.69</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Crispy Chicken (or spicy!)</span>
+                <span class="menu-price">$6.29</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Grilled Chicken</span>
+                <span class="menu-price">$6.29</span>
+              </div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>More Favorites</h3>
+
+              <div class="menu-item">
+                <span>Add Bacon</span>
+                <span class="menu-price">$1.49</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Add Cheese</span>
+                <span class="menu-price">$0.35</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Pronto Pup</span>
+                <span class="menu-price">$3.69</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Hot Dog</span>
+                <span class="menu-price">$3.59</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Blues Hog Pork BBQ</span>
+                <span class="menu-price">$5.19</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Chicken Tenders (3)</span>
+                <span class="menu-price">$4.29</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Chicken Tenders (5)</span>
+                <span class="menu-price">$6.99</span>
+              </div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>Family Packs</h3>
+
+              <div class="menu-item">
+                <span>
+                  Cheeseburger Family Pack
+                  <span class="menu-sub">
+                    4 cheeseburgers + 1 pound of fries
+                  </span>
+                </span>
+                <span class="menu-price">$17.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>
+                  Double Cheeseburger Family Pack
+                  <span class="menu-sub">
+                    4 double cheeseburgers + 1 pound of fries
+                  </span>
+                </span>
+                <span class="menu-price">$21.99</span>
+              </div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>Kids Menu</h3>
+
+              <div class="menu-item">
+                <span>
+                  Kids Meal
+                  <span class="menu-sub">
+                    Choice of grilled cheese, 2 chicken strips,
+                    hot dog, Pronto Pup or junior burger.
+                    Comes with fries, 12 oz. drink &amp; toy.
+                  </span>
+                </span>
+
+                <span class="menu-price">$6.29</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- SIDES -->
+
+        <div id="sides" class="tab-panel">
+
+          <div class="menu-columns">
+
+            <div class="menu-card">
+
+              <h3>Sides</h3>
+
+              <div class="menu-item">
+                <span>Cheese Cubes</span>
+                <span class="menu-price">$4.79</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Regular Fry</span>
+                <span class="menu-price">$2.69</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large Fry</span>
+                <span class="menu-price">$3.29</span>
+              </div>
+
+              <div class="menu-item">
+                <span>One Pound of Fries</span>
+                <span class="menu-price">$5.39</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Mushrooms</span>
+                <span class="menu-price">$5.29</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Regular Onion Rings</span>
+                <span class="menu-price">$4.79</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large Onion Rings</span>
+                <span class="menu-price">$5.79</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Mozzarella Sticks</span>
+                <span class="menu-price">$5.59</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Hot Cheese Dip</span>
+                <span class="menu-price">$0.89</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Small Chili — Seasonal</span>
+                <span class="menu-price">$4.39</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large Chili — Seasonal</span>
+                <span class="menu-price">$5.39</span>
+              </div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>Drinks</h3>
+
+              <div class="menu-item">
+                <span>Kids</span>
+                <span class="menu-price">$1.79</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Regular</span>
+                <span class="menu-price">$1.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Medium</span>
+                <span class="menu-price">$2.69</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large</span>
+                <span class="menu-price">$2.89</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Add Vanilla</span>
+                <span class="menu-price">Free</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Add Cherry</span>
+                <span class="menu-price">Free</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Milk</span>
+                <span class="menu-price">$1.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Regular Coffee</span>
+                <span class="menu-price">$1.69</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large Coffee</span>
+                <span class="menu-price">$2.69</span>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- ICE CREAM -->
+
+        <div id="icecream" class="tab-panel">
+
+          <div class="menu-columns">
+
+            <div class="menu-card">
+
+              <h3>Cones</h3>
+
+              <div class="menu-item">
+                <span>Regular</span>
+                <span class="menu-price">$1.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Medium</span>
+                <span class="menu-price">$2.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large</span>
+                <span class="menu-price">$3.59</span>
+              </div>
+
+              <p>
+                <strong>Flavors:</strong>
+                Vanilla, Chocolate, Twist, Lemon,
+                plus Flavor of the Week.
+              </p>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>Sundaes</h3>
+
+              <div class="menu-item">
+                <span>Regular</span>
+                <span class="menu-price">$3.49</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Medium</span>
+                <span class="menu-price">$3.99</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large</span>
+                <span class="menu-price">$4.59</span>
+              </div>
+
+              <p>
+                <strong>Choices:</strong>
+                Chocolate, Butter Pecan, Peanut Butter,
+                Hot Fudge, Pineapple, Butterscotch,
+                Raspberry, Blueberry, Strawberry,
+                Marshmallow, Chocolate/Marshmallow
+                and Caramel.
+              </p>
+
+              <p>
+                <strong>Extra toppings or nuts:</strong>
+                $0.69
+              </p>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>Banana Split</h3>
+
+              <div class="menu-item">
+                <span>
+                  Banana Split
+                  <span class="menu-sub">
+                    Comes with pecans, whipped cream &amp; cherry
+                  </span>
+                </span>
+
+                <span class="menu-price">$6.09</span>
+              </div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>Premium Sundaes</h3>
+
+              <div class="menu-item">
+                <span>Premium Sundae</span>
+                <span class="menu-price">$5.79</span>
+              </div>
+
+              <p>
+                Reese's PB Cup, S'mores, Red White and Blueberry,
+                Turtle, Cookies and Creme.
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- SHAKES -->
+
+        <div id="treats" class="tab-panel">
+
+          <div class="menu-columns">
+
+            <div class="menu-card">
+
+              <h3>Shakes</h3>
+
+              <div class="menu-item">
+                <span>Regular</span>
+                <span class="menu-price">$3.69</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Medium</span>
+                <span class="menu-price">$4.69</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large</span>
+                <span class="menu-price">$5.49</span>
+              </div>
+
+              <p>
+                <strong>Flavors:</strong>
+                Vanilla, Chocolate, Strawberry, Pineapple,
+                Lemon, Dreamsicle, Raspberry, Cotton Candy,
+                Hot Fudge, Marshmallow, Peanut Butter,
+                Butterscotch, Banana, Cherry, Blueberry
+                and Caramel.
+              </p>
+
+              <p>
+                <strong>Add malt:</strong> $0.69
+              </p>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>Floats</h3>
+
+              <p>Root Beer or Coke</p>
+
+              <div class="menu-item">
+                <span>Regular</span>
+                <span class="menu-price">$3.49</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Medium</span>
+                <span class="menu-price">$4.59</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large</span>
+                <span class="menu-price">$5.49</span>
+              </div>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>Glaciers</h3>
+
+              <div class="menu-item">
+                <span>Junior</span>
+                <span class="menu-price">$4.29</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Regular</span>
+                <span class="menu-price">$5.09</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Medium</span>
+                <span class="menu-price">$5.79</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Large</span>
+                <span class="menu-price">$6.79</span>
+              </div>
+
+              <p>
+                Cookie Dough, Oreo, Butter Pecan,
+                Reese's Peanut Butter Cup, M&amp;M,
+                Snickers, Heath Bar, Butterfinger,
+                Banana Split, Nestlé Crunch,
+                Brownie Bites and S'mores.
+              </p>
+
+              <p>
+                <strong>Extra candy:</strong> $1.29
+              </p>
+
+            </div>
+
+
+            <div class="menu-card">
+
+              <h3>Take Some Home</h3>
+
+              <div class="menu-item">
+                <span>Quart</span>
+                <span class="menu-price">$7.29</span>
+              </div>
+
+              <div class="menu-item">
+                <span>2 Quarts</span>
+                <span class="menu-price">$13.59</span>
+              </div>
+
+              <div class="menu-item">
+                <span>Pint</span>
+                <span class="menu-price">$5.29</span>
+              </div>
+
+              <p>
+                Quart flavors: Vanilla, Chocolate, Twist
+                and Lemon. Pints available in Flavors of the Week.
+              </p>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section id="gallery">
+
+      <div class="container">
+
+        <div class="section-kicker">
+          A little taste of Mattoon
+        </div>
+
+        <h2 class="section-title">
+          Fresh from the <span class="script">counter</span>
+        </h2>
+
+        <div class="gallery-grid">
+
+          <img
+            src="images/bk2-burgers.jpg"
+            alt="Burger King Mattoon burgers and fries"
+          >
+
+          <img
+            src="images/bk7-family-pack.jpg"
+            alt="Family pack with burgers fries and drinks"
+          >
+
+          <img
+            src="images/bk3-sundae.jpg"
+            alt="Strawberry sundae"
+          >
+
+          <img
+            src="images/bk4-chili.jpg"
+            alt="Chili, toasted sandwich and drink"
+          >
+
+          <img
+            src="images/bk5-burger-rings.jpg"
+            alt="Burger and onion rings"
+          >
+
+          <img
+            src="images/bk1-drink.jpg"
+            alt="Ice cold soft drink"
+          >
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- VISIT -->
+
+    <section id="visit" class="visit">
+
+      <div class="container visit-grid">
+
+        <div>
+
+          <div
+            class="section-kicker"
+            style="color:#ffe7a4;"
+          >
+            Come see us
+          </div>
+
+          <h2 class="section-title">
+            A Mattoon tradition is
+            <span
+              class="script"
+              style="color:#fff;"
+            >
+              waiting.
+            </span>
+          </h2>
+
+          <p style="font-size:1.15rem; max-width:600px;">
+            Dine in, use the drive-thru, or call ahead
+            and pick up your order.
+          </p>
+
+        </div>
+
+
+        <div class="visit-card">
+
+          <h3>
+            Burger King — Mattoon, Illinois
+          </h3>
+
+          <p>
+            <strong>1508 Charleston Ave.</strong><br>
+            Mattoon, IL 61938
+          </p>
+
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:+12172348122">
+              217-234-8122
+            </a>
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="https://www.google.com/maps/search/?api=1&query=1508+Charleston+Ave+Mattoon+IL+61938"
+            target="_blank"
+            rel="noopener"
+          >
+            Get Directions
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="tel:+12172348122"
+          >
+            Call Ahead
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-brand">
+        BURGER KING • MATTOON, IL
+      </div>
+
+      <p>
+        An independent Mattoon restaurant.
+        Not affiliated with Burger King Corporation
+        or the national Burger King restaurant chain.
+      </p>
+
+      <p>
+        © <span id="year"></span>
+        Burger King LLC of Illinois.
+        All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <a
+    class="back-top"
+    href="#top"
+    aria-label="Back to top"
+  >
+    ↑
+  </a>
+
+
+  <script>
+
+    /* MOBILE NAVIGATION */
+
+    const menuToggle =
+      document.querySelector(".menu-toggle");
+
+    const nav =
+      document.getElementById("nav");
+
+    menuToggle.addEventListener("click", () => {
+
+      nav.classList.toggle("open");
+
+    });
+
+
+    nav.querySelectorAll("a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        nav.classList.remove("open");
+
+      });
+
+    });
+
+
+    /* MENU TABS */
+
+    const tabButtons =
+      document.querySelectorAll(".tab-btn");
+
+    const tabPanels =
+      document.querySelectorAll(".tab-panel");
+
+
+    tabButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        tabButtons.forEach(btn =>
+          btn.classList.remove("active")
+        );
+
+        tabPanels.forEach(panel =>
+          panel.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        document
+          .getElementById(button.dataset.tab)
+          .classList.add("active");
+
+      });
+
+    });
+
+
+    /* CURRENT YEAR */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
